@@ -1,0 +1,101 @@
+/* ─────────────────────────────────────────────────────────────
+   SİBER KALKAN — BTY.6.4.3 (senaryo)
+   Her vuruş bir altyazıdır: tr, en, note (öğretmen için seslendirme).
+   Değiştirdikten sonra: npm run build
+   ───────────────────────────────────────────────────────────── */
+BF.defineFilm({
+  meta: {
+    slug: 'siber-kalkan', title: 'Siber Kalkan', titleEn: 'Cyber Shield', code: 'BTY.6.4.3',
+    outcomeEn: 'Managing security measures in cyberspace',
+    summary: 'Siber ortamdaki güvenlik riskleri tanıtılır: kimlik avı, zayıf şifreyle hesap ele geçirme, korsan yazılımla yayılan zararlı yazılımlar ve sistem açıklarından veri sızdırma. Güçlü ve farklı şifreler, iki adımlı doğrulama, güncelleme, antivirüs ve yedekleme gibi önlemler sıralanır. Bilgi güvenliğinin temel bileşenleri (gizlilik, bütünlük, erişilebilirlik) günlük örneklerle ayırt edilir. Son olarak "arkadaşım şifresini bana verdi" senaryosu ve benzer durumlar güvenlik önlemleri açısından değerlendirilir.',
+    summaryEn: 'Cyber risks (phishing, weak passwords, malware from pirated software, leaks through system flaws) and protections (strong unique passwords, two-step verification, updates, antivirus, backups) are introduced; confidentiality, integrity and availability are told apart; and a "my friend gave me his password" scenario is judged.',
+    blurb: 'Kimlik avı, zayıf şifre, korsan yazılım; önlemler; gizlilik-bütünlük-erişilebilirlik ve senaryo değerlendirme.',
+    posterAlt: 'Başlık ve Karo; çevresinde kalkan, şifre, virüs ve bulut karoları',
+  },
+  scenes: [
+    { type: 'intro', icons: [{ icon: 'shield', c: 'turkuaz' }, { icon: 'password', c: 'kobalt' }, { icon: 'phishing', c: 'mor' }, { icon: 'virus', c: 'mercan' }, { icon: 'bug', c: 'safran' }, { icon: 'cloud', c: 'kobalt' }, { icon: 'lock', c: 'safran' }, { icon: 'gear', c: 'zumrut' }],
+      beats: [
+        { tr: 'Arkadaşım oyun hesabının şifresini bana verdi', en: 'My friend gave me his game password', extra: 1,
+          note: 'Karo\'nun arkadaşı tatile giderken "Hesabımda görevleri sen yap" diyerek oyun şifresini Karo\'ya verdi. Sence bu güvenli mi?', karo: { mood: 'thinking', caret: '?' } },
+        { tr: 'Siber kalkanımızı kuralım', en: 'Let\'s build our cyber shield',
+          note: 'Siber ortamdaki riskleri ve önlemleri öğrenelim.' },
+      ] },
+    { type: 'cards', name: 'Siber riskler', en: 'Cyber risks', desc: 'Kimlik avı, zayıf şifre, korsan yazılım; sistem açıkları ve veri sızıntısı.', out: 'a',
+      cards: [
+        { word: 'KİMLİK AVI', def: 'Sahte sayfayla şifre çalmak', icon: 'phishing', c: 'mor' },
+        { word: 'ZAYIF ŞİFRE', def: '123456 gibi tahmini kolay şifre', icon: 'password', c: 'safran' },
+        { word: 'KORSAN YAZILIM', def: 'İçinden virüs çıkabilen lisanssız program', icon: 'virus', c: 'mercan' },
+      ],
+      result: { word: 'SİBER RİSKLER', c: 'mercan', chips: ['sistem açıkları', 'veri sızıntısı'], line: 'Şifre paylaşmak da bir risktir' },
+      beats: [
+        { tr: 'Kimlik avı: sahte sayfayla şifre çalmak', en: 'Phishing: stealing passwords with fake pages',
+          note: 'Kimlik avında gerçeğine benzeyen sahte bir giriş sayfası hazırlanır; oraya yazılan şifre çalınır.' },
+        { tr: 'Zayıf şifre: hesabı kolayca ele geçirtir', en: 'Weak passwords make accounts easy to take over',
+          note: '123456 ya da doğum tarihi gibi şifreler kolayca tahmin edilir ve hesap ele geçirilir.' },
+        { tr: 'Korsan yazılım: içinden virüs çıkabilir', en: 'Pirated software can hide viruses',
+          note: 'Lisanssız, korsan programların içine zararlı yazılımlar gizlenmiş olabilir.' },
+        { tr: 'Sistem açıkları ve şifre paylaşmak da risk', en: 'System flaws and shared passwords are risks too', extra: 1,
+          note: 'Güncellenmeyen programlardaki açıklardan veriler sızdırılabilir. Şifremizi başkasıyla paylaşmak da hesabımızı riske atar.' },
+      ] },
+    { type: 'steps', name: 'Önlemler', en: 'Protections', desc: 'Güçlü ve farklı şifreler, iki adımlı doğrulama, güncelleme, antivirüs, yedekleme.', out: 'b',
+      steps: [
+        { icon: 'password', label: 'Şifre', text: 'Güçlü ve her hesapta farklı', c: 'kobalt' },
+        { icon: 'phone', label: 'İki adım', text: 'Şifre + telefona gelen kod', c: 'turkuaz' },
+        { icon: 'gear', label: 'Güncelle', text: 'Açıkları kapatır', c: 'zumrut' },
+        { icon: 'shield', label: 'Antivirüs', text: 'Zararlı yazılımı yakalar', c: 'mor' },
+        { icon: 'cloud', label: 'Yedekle', text: 'Dosyalar kaybolmaz', c: 'safran' },
+      ],
+      beats: [
+        { tr: 'Güçlü, farklı şifre ve iki adımlı doğrulama', en: 'Strong, unique passwords and two-step verification', show: 2, extra: 1,
+          note: 'Her hesapta farklı ve güçlü bir şifre kullanırız. İki adımlı doğrulamada şifreye ek olarak telefona gelen kodu da gireriz.' },
+        { tr: 'Güncelle ve antivirüs kullan', en: 'Update and use antivirus', show: 4,
+          note: 'Güncellemeler sistem açıklarını kapatır. Antivirüs programı zararlı yazılımları yakalar.' },
+        { tr: 'Önemli dosyaları yedekle', en: 'Back up important files', show: 5, extra: 1,
+          note: 'Önemli dosyalarımızı buluta ya da harici belleğe yedekleriz. Bir sorun olursa dosyalarımız kaybolmaz.' },
+      ] },
+    { type: 'sort', name: 'Bilgi güvenliği', en: 'Information security', desc: 'Gizlilik, bütünlük ve erişilebilirlik ayırt edilir.', out: 'c',
+      bins: [{ label: 'GİZLİLİK', c: 'kobalt' }, { label: 'BÜTÜNLÜK', c: 'zumrut' }, { label: 'ERİŞİLEBİLİRLİK', c: 'safran' }],
+      items: [
+        { icon: 'password', name: 'Şifremi kimseyle paylaşmam', bin: 0, beat: 1 },
+        { icon: 'eyeOff', name: 'Mesajlarımı yalnızca ben okurum', bin: 0, beat: 1 },
+        { icon: 'school', name: 'Notları yalnızca öğretmen değiştirir', bin: 1, beat: 2 },
+        { icon: 'fileDoc', name: 'Ödevim izinsiz değiştirilemez', bin: 1, beat: 2 },
+        { icon: 'cloud', name: 'Ödevimi buluta yedeklerim', bin: 2, beat: 3 },
+        { icon: 'globe', name: 'Okul sitesi her zaman açık', bin: 2, beat: 3 },
+      ],
+      beats: [
+        { tr: 'Bilgi güvenliğinin üç bileşeni', en: 'The three parts of information security',
+          note: 'Bilgi güvenliğinin üç temel bileşeni vardır: gizlilik, bütünlük ve erişilebilirlik. Örnekleri gruplayalım.' },
+        { tr: 'Gizlilik: yalnızca izinliler görür', en: 'Confidentiality: only allowed people see it',
+          note: 'Şifremizi paylaşmamak ve mesajlarımızı yalnızca bizim okumamız gizlilikle ilgilidir.' },
+        { tr: 'Bütünlük: izinsiz değiştirilemez', en: 'Integrity: no unauthorised changes',
+          note: 'Notlarımızı yalnızca öğretmenin değiştirebilmesi ve ödevimizin izinsiz değiştirilememesi bütünlüktür.' },
+        { tr: 'Erişilebilirlik: gerektiğinde ulaşırız', en: 'Availability: there when we need it', extra: 1,
+          note: 'Yedeklediğimiz ödeve her zaman ulaşabilmek ve okul sitesinin açık kalması erişilebilirliktir.' },
+      ] },
+    { type: 'judge', name: 'Durumu değerlendir', en: 'Judge the situation', desc: 'Siber ortamdaki örnek durumlar güvenlik önlemleri açısından değerlendirilir.', out: 'ç', labels: { ok: 'güvenli', no: 'riskli' },
+      beats: [
+        { tr: 'Arkadaşımın şifresini kullanmayıp uyarmak', en: 'Not using my friend\'s password and warning him',
+          note: 'Karo şifreyi kullanmadı. Arkadaşına şifresini kimseyle paylaşmamasını ve değiştirmesini söyledi. Güvenli ve doğru davranış.',
+          row: { icon: 'handshake', text: 'Arkadaşımın verdiği şifreyi kullanmadım, değiştirmesini söyledim', ok: true, why: 'Şifre kişiye özeldir' } },
+        { tr: 'Her hesapta aynı şifreyi kullanmak', en: 'Using the same password everywhere',
+          note: 'Bir hesabın şifresi çalınırsa aynı şifreyi kullandığımız bütün hesaplar tehlikeye girer. Riskli.',
+          row: { icon: 'password', text: 'Bütün hesaplarımda aynı şifreyi kullanıyorum', ok: false, why: 'Biri çalınırsa hepsi açılır' } },
+        { tr: 'Güncelleme uyarısını hep ertelemek', en: 'Always postponing updates',
+          note: 'Güncellemeleri ertelemek sistem açıklarını açık bırakır. Riskli.',
+          row: { icon: 'gear', text: 'Güncelleme uyarısını her seferinde erteliyorum', ok: false, why: 'Açıklar kapanmaz' } },
+      ] },
+    { type: 'summary',
+      lines: [
+        { icon: 'phishing', c: 'mor', text: 'Kimlik avı, zayıf şifre, korsan yazılıma dikkat' },
+        { icon: 'shield', c: 'turkuaz', text: 'Farklı şifre, iki adım, güncelleme, yedek' },
+        { icon: 'lock', c: 'safran', text: 'Gizlilik, bütünlük, erişilebilirlik' },
+      ],
+      beats: [
+        { tr: 'Aklında kalsın: şifre diş fırçası gibidir', en: 'Remember: a password is like a toothbrush',
+          note: 'Aklında kalsın: şifre diş fırçası gibidir; kimseyle paylaşılmaz ve düzenli değiştirilir.' },
+        { tr: 'Siber kalkanın hep açık olsun!', en: 'Keep your cyber shield up!',
+          note: 'Önlemlerini aldıkça siber kalkanın güçlenir!' },
+      ] },
+  ],
+});
